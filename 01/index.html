@@ -1,13 +1,29 @@
-<html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <h1>Christmas Countdown 🎄</h1>
-        <div class="container">
-            <p id="countdown-display" class="countdown-display">-</p>
-            <p class="countdown-text">Days 'til Christmas!</p>
-        </div>
-        <script src="index.js"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Countdown Timer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <h1 id="headline" class="headline">🎄 Countdown to Christmas 🎄</h1>
+      <ul id="countdown-list" class="countdown-list">
+        <li><span id="days">-</span>days</li>
+        <li><span id="hours">-</span>hours</li>
+        <li><span id="minutes">-</span>minutes</li>
+        <li><span id="seconds">-</span>seconds</li>
+      </ul>
+    </div>
+  </main>
+
+  <script src="index.js"></script>  
+</body>
 </html>
+
