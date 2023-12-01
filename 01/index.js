@@ -1,5 +1,5 @@
 const targetDate = new Date("2023-12-25 00:00:00 PST"); // countdown target end date 
-const testDate = new Date("2023-11-30 14:40:00 PST");
+const testDate = new Date("2023-12-01 10:56:00 PST");
 
 // Render countdown data to the DOM
 function renderCountdown(clockData){
@@ -24,9 +24,10 @@ let handleCountdown = setInterval(() => {
   // update countdown timer
   updateClock(targetDate);
   // check if target date has been reached, stop the timer
-  // ToDo: improve this to announce 'Christmas 2023 is here!' w/Elf gif
-  if (Date.parse(targetDate) === Date.parse(new Date())) {
+  if (Date.parse(targetDate) <= Date.parse(new Date())) {
     clearInterval(handleCountdown);
-    document.getElementById('headline').textContent = `🎄 It's Christmas! 🎄`
+    document.getElementById('countdown-list').style.display = 'none';
+    document.getElementById('elf-gif').style.display = 'block';
+    document.getElementById('headline').textContent = `🎄 Merry Christmas! 🎄`
   }
 }, 1000)

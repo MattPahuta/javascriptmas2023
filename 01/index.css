@@ -37,6 +37,9 @@ body {
   text-align: center;
   color: var(--dark-green);
   background-color: var(--snow);
+  background-image: url('./assets/xmasBG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .headline {
@@ -66,6 +69,12 @@ body {
   flex-direction: column;
   gap: 1.5rem;
   justify-content: space-around;
+}
+
+.elf-gif {
+  max-width: 300px;
+  margin: auto;
+  display: none;
 }
 
 @media (min-width: 600px) {
