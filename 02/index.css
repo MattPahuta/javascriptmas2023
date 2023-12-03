@@ -1,0 +1,99 @@
+:root {
+  --ff-primary: 'Karla', sans-serif;
+  --body-bg: #1E1F25;
+  --btn-bg: #000;
+  --btn-color: #cbcbcb;
+  --btn-color-hover: #fff;
+  --grad-color1: #eeaf61;
+  --grad-color2: #fb9062;
+  --grad-color3: #ee5d6c;
+  --grad-color4: #ce4993;
+  --grad-color5: #6a0d83;
+
+  --gradient-angle: 115deg;
+  --gradient: 
+    var(--grad-color1) 10%, 
+    var(--grad-color2) 25%, 
+    var(--grad-color3) 50%, 
+    var(--grad-color4) 75%, 
+    var(--grad-color5) 90%;
+  --gradient-flip: 
+    var(--grad-color5) 10%, 
+    var(--grad-color4) 25%, 
+    var(--grad-color3) 50%, 
+    var(--grad-color2) 75%, 
+    var(--grad-color1) 90%;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Base Styles */
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: var(--body-bg);
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  font-family: var(--ff-primary);
+  padding: 0.75em 1.75em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  font-size: 1.75rem;
+  text-align: center;
+  line-height: 1.1;
+  transition: 250ms all ease-in-out;
+  border: 10px solid;
+  border-width: 8px;
+  border-image: linear-gradient(var(--gradient-angle),var(--gradient)) 1;
+}
+
+.button:hover,
+.button:focus {
+  color: var(--btn-color-hover);
+  border-image: linear-gradient(var(--gradient-angle),var(--gradient-flip)) 1;
+  scale: 1.05;
+}
