@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xmas Wishlist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <header>
+        <img src="./assets/gift-box.png" alt="Wrapped gift icon">
+        <h1>My Wishlist</h1>
+      </header>
+      <form id="item-form">
+        <div class="form-control input-container">
+          <label for="item-input">Wish for Something</label>
+          <input type="text" class="item-input" id="item-input" placeholder="Enter an item">
+        </div>
+        <div class="form-control">
+          <button class="btn btn-add" type="submit">Add to Wishlist</button>
+        </div>
+      </form>
+      <ul id="wishlist" class="wishlist">
+        <!-- <li class="item">Macbook Air
+          <button><i class="fa-solid fa-xmark"></i></i></button>
+        </li>
+        <li class="item">Sony PS5
+          <button><i class="fa-solid fa-xmark"></i></i></button>
+        </li>
+        <li class="item">iPad Pro
+          <button><i class="fa-solid fa-xmark"></i></i></button>
+        </li> -->
+      </ul>
+      <!-- <button id="clear" class="btn btn-clear">Clear all Items</button> -->
+    </div>
+  </main>
+  
+  <script src="main.js"></script>
+</body>
+</html>
