@@ -79,7 +79,8 @@ function removeItem(e) {
     console.log(e.target.closest('li'))
     const itemToRemove = e.target.closest('li');
     itemToRemove.remove();
-    removeItemFromStorage(itemToRemove);
+    console.log(itemToRemove.innerText)
+    removeItemFromStorage(itemToRemove.innerText);
   }  
 }
 
