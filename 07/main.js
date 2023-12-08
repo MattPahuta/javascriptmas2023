@@ -1,8 +1,8 @@
-const wishlist = [
-  'Macbook Air M2',
-  'Subaru Crosstrek Sport',
-  'Sony PS5'
-]
+// const wishlist = [
+//   'Macbook Air M2',
+//   'Subaru Crosstrek Sport',
+//   'Sony PS5'
+// ]
 
 const itemForm = document.getElementById('item-form');
 const itemInput = document.getElementById('item-input');
@@ -36,7 +36,6 @@ function addWishlistItem(e) {
 function displayItems() {
   const itemsFromStorage = getItemsFromStorage();
   itemsFromStorage.forEach(item => addItemToDOM(item));
-  // check UI State
 }
 
 // add items to local storage
@@ -57,24 +56,7 @@ function getItemsFromStorage() {
   return itemsFromStorage;
 }
 
-// function removeItem(e) {
-//   if (e.target.parentElement)
-// }
-
-// function onClickItem(e) {
-//   console.log(e.target.closest('button'))
-
-//   if (e.target.closest('button')) {
-//     console.log(e.target.closest('li'))
-//     item.remove();
-
-//     removeItem(e.target.closest('li'))
-//   }
-// }
-
 function removeItem(e) {
-  console.log(e.target.closest('button'))
-
   if (e.target.closest('button')) {
     console.log(e.target.closest('li'))
     const itemToRemove = e.target.closest('li');
@@ -86,22 +68,13 @@ function removeItem(e) {
 
 function removeItemFromStorage(item) {
   let itemsFromStorage = getItemsFromStorage();
-
   // Filter out item to be removed
   itemsFromStorage = itemsFromStorage.filter((i) => i !== item);
-
   // Re-set to localstorage
   localStorage.setItem('wishItems', JSON.stringify(itemsFromStorage));
 }
 
-
-
 function addItemToDOM(item) {
-  console.log(item)
-  // const itemHTML =
-  // `<li class="item">${item}
-  //   <button><i class="fa-solid fa-xmark"></i></i></button>
-  // </li>`;
   const li = document.createElement('li');
   li.classList.add('item');
   li.appendChild(document.createTextNode(item));
@@ -115,7 +88,6 @@ function addItemToDOM(item) {
 
 function init() {
   itemForm.addEventListener('submit', addWishlistItem);
-  // itemList.addEventListener('click', onClickItem);
   document.addEventListener('DOMContentLoaded', displayItems);
   itemList.addEventListener('click', removeItem);
 }
