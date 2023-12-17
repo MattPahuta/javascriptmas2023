@@ -1,0 +1,68 @@
+:root {
+  --clr-violet-blue: #5134ff;
+  --clr-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  width: 350px;
+  height: 200px;
+  border: 3px solid var(--clr-violet-blue);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+  - define steps of animation in keyframes using percentages
+    - 0% beginning, 100% end
+  - use pseudo element 'content' property to swap words
+*/
+
+h1 {
+  font-weight: 600;
+}
+
+.carousel-heading::after {
+  content: "";
+  margin-left: 0.125em;
+  padding: 0.25em 0.5em;
+  color: var(--clr-white);
+  background-color: var(--clr-violet-blue);
+  border-radius: 6px;
+  animation: word-carousel 5s infinite;
+
+  width: max-content;
+  height: 100%;
+}
+
+@keyframes word-carousel {
+  0% {
+    content: "Coding";
+  }
+  33.33% {
+    content: "Dogs";
+  }
+  66.66% {
+    content: "Craft Beer";
+  }
+  100% {
+    content: "My Wife";
+  }
+}
