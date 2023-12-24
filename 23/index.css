@@ -1,0 +1,82 @@
+:root {
+  --bg-primary: #F2F2F2;
+  --clr-white: #FFFFFF;
+  --clr-gray: #6E6E6E;
+  --clr-blue: #4581f9;
+  --clr-black: #333333;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--clr-black);
+  background: var(--bg-primary);
+}
+
+.toggle-wrap {
+  width: 360px;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  background: var(--clr-white);
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 72px;
+  height: 38px;
+}
+
+.input-toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  border-radius: 500px;
+  outline: 2px solid var(--clr-black);
+  transition: all 250ms ease-in-out; 
+}
+
+.toggle-switch:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  left: 4px;
+  bottom: 4px;
+  background: var(--clr-black);
+  transition: all 250ms ease-in-out;
+}
+
+.input-toggle:checked + .toggle-switch {
+  background: var(--clr-blue);
+}
+
+.input-toggle:checked + .toggle-switch:before {
+  transform: translateX(34px);
+}
+
+.toggle-switch:before {
+  border-radius: 50%;
+}
