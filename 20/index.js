@@ -37,3 +37,18 @@ function saveSanta(arr) {
 // Check the returned results from saveSanta()
 console.log(saveSanta(dangerArray))
 
+// Another solution using recursion 
+//  - Does not keep original array structure
+//  - Essentially a more complex way of using .flat
+function saveSanta2(arr) {
+    const flatArr = arr.reduce((total, currVal) => Array.isArray(currVal) 
+        ? total.concat(saveSanta2(currVal)) 
+        : total.concat(currVal), [])
+    const safeArr = []
+    for (let item of flatArr) {
+        if (item === "🎅") {
+            safeArr.push(item)
+        }
+    }
+    return safeArr
+}
